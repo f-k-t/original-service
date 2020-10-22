@@ -24,6 +24,9 @@
                             <c:out value="${account.name}" />
                         </td>
                         <td>
+                            <c:out value="${account.mail}" />
+                        </td>
+                        <td>
                             <c:choose>
                                 <c:when test="${account.delete_flag == 1}">
                                     （削除済み）

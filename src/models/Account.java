@@ -16,6 +16,7 @@ import javax.persistence.Table;
         @NamedQuery(name = "getAllAccounts", query = "SELECT a FROM Account AS a ORDER BY a.id DESC"),
         @NamedQuery(name = "getAccountsCount", query = "SELECT COUNT(a) FROM Account AS a"),
         @NamedQuery(name = "checkRegisteredCode", query = "SELECT COUNT(a) FROM Account AS a WHERE a.code = :code"),
+        @NamedQuery(name = "checkRegisteredMail", query = "SELECT COUNT(a) FROM Account AS a WHERE a.mail = :mail"),
         @NamedQuery(name = "checkLoginMailAndPassword", query = "SELECT a FROM Account AS a WHERE a.delete_flag = 0 AND a.mail = :mail AND a.password = :pass")
 })
 @Entity
@@ -40,7 +41,7 @@ public class Account {
     //@Column(name = "icon", nullable = false)
     //private Integer icon;
 
-    @Column(name = "profile")
+    @Column(name = "profile", nullable = true)
     private String profile;
 
     @Column(name = "created_at", nullable = false)

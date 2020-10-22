@@ -22,6 +22,12 @@
 <br />
 <br />
 
+<label for="mail">メールアドレス</label>
+<br />
+<input type="text" name="mail" value="${account.mail}" />
+<br />
+<br />
+
 <label for="password">パスワード</label>
 <br />
 <input type="password" name="password" />

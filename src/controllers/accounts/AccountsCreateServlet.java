@@ -45,10 +45,12 @@ public class AccountsCreateServlet extends HttpServlet {
 
             a.setCode(request.getParameter("code"));
             a.setName(request.getParameter("name"));
+            a.setMail(request.getParameter("mail"));
             a.setPassword(
                     EncryptUtil.getPasswordEncrypt(
                             request.getParameter("password"),
                             (String) this.getServletContext().getAttribute("pepper")));
+            a.setProfile("");
             //a.setDelete_flag(Integer.parseInt(request.getParameter("delete_flag")));
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());

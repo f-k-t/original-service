@@ -13,11 +13,6 @@ public class AccountValidator {
             Boolean password_check_flag) {
         List<String> errors = new ArrayList<String>();
 
-        String mail_error = _validateMail(a.getMail(), mail_duplicate_check_flag);
-        if (!mail_error.equals("")) {
-            errors.add(mail_error);
-        }
-
         String code_error = _validateCode(a.getCode(), code_duplicate_check_flag);
         if (!code_error.equals("")) {
             errors.add(code_error);
@@ -27,6 +22,12 @@ public class AccountValidator {
         if (!name_error.equals("")) {
             errors.add(name_error);
         }
+
+        String mail_error = _validateMail(a.getMail(), mail_duplicate_check_flag);
+        if (!mail_error.equals("")) {
+            errors.add(mail_error);
+        }
+
         String password_error = _validatePassword(a.getPassword(), password_check_flag);
         if (!password_error.equals("")) {
             errors.add(password_error);
