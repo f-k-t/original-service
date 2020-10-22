@@ -49,7 +49,7 @@ public class AccountsCreateServlet extends HttpServlet {
                     EncryptUtil.getPasswordEncrypt(
                             request.getParameter("password"),
                             (String) this.getServletContext().getAttribute("pepper")));
-            //a.setAdmin_flag(Integer.parseInt(request.getParameter("admin_flag")));
+            //a.setDelete_flag(Integer.parseInt(request.getParameter("delete_flag")));
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             a.setCreated_at(currentTime);
